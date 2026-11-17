@@ -1,21 +1,24 @@
 #!/bin/sh
-# Builds dist/free-blocks-<version>.zip, which unpacks to free-blocks/ so it
-# can be dropped straight into <Enshrouded>/mods/.
+# Builds dist/free-blocks-<version>.zip from the last commit. The zip unpacks
+# to free-blocks/ so it can be dropped straight into <Enshrouded>/mods/.
+# Needs only git, so it runs the same on macOS, Linux and Windows (Git Bash).
 set -eu
 
 cd "$(dirname "$0")"
 
 id=$(sed -n 's/.*"id": *"\([^"]*\)".*/\1/p' mod.json)
 version=$(sed -n 's/.*"version": *"\([^"]*\)".*/\1/p' mod.json)
-out="$PWD/dist/$id-$version.zip"
+out="dist/$id-$version.zip"
 
-stage=$(mktemp -d)
-trap 'rm -rf "$stage"' EXIT
+set -- mod.json README.md LICENSE src
+if git ls-files --error-unmatch icon.png >/dev/null 2>&1; then
+    set -- "$@" icon.png
+fi
 
-mkdir -p "$stage/$id" dist
-cp -R mod.json README.md LICENSE src "$stage/$id/"
-[ -f icon.png ] && cp icon.png "$stage/$id/"
+if ! git diff --quiet HEAD -- "$@"; then
+    echo "warning: uncommitted changes are not included in the zip" >&2
+fi
 
-rm -f "$out"
-(cd "$stage" && zip -rqX "$out" "$id" -x '*.DS_Store')
-echo "$out"
+mkdir -p dist
+git archive --format=zip --prefix="$id/" -o "$out" HEAD "$@"
+echo "$PWD/$out"
