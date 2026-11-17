@@ -10,7 +10,7 @@ Weapons, armor, food, furniture, and upgrades still cost what they always did.
 
 - [EML (Enshrouded Mod Loader)](https://www.nexusmods.com/enshrouded/mods/135)
 
-Tested on game version: TODO
+Tested on game version: 1287369 (Steam build 26430625), with EML v0.2.0
 
 ## Install
 
@@ -26,7 +26,7 @@ To uninstall, delete the `free-blocks` folder. Uninstalling is safe, it will sim
 Set `enable_console` to `true` in `eml.json` in the game folder. On launch the console prints one line per recipe it changed, then a summary:
 
 ```
-[free-blocks] 60 block items found, 60 recipes made free
+[free-blocks] 69 block items found, 69 recipes made free
 ```
 
 If it reports that nothing was changed, a game update has changed the recipe data and the mod needs updating.
