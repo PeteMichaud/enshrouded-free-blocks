@@ -16,7 +16,7 @@ Tested on game version: 1287369 (Steam build 26430625), with EML v0.2.0
 
 1. [Install EML](https://brabb3l.github.io/kfc-parser/eml/usage.html). 
   * In short: download EML from its [Nexus page](https://www.nexusmods.com/enshrouded/mods/135), copy `dbghelp.dll` into the Enshrouded game folder, and create a `mods` folder next to it.
-2. Unzip so this folder sits at `<Enshrouded>/mods/free-blocks/`, with `mod.json` directly inside it.
+2. Download `free-blocks-<version>.zip` from the [latest release](https://github.com/PeteMichaud/enshrouded-free-blocks/releases/latest) and unzip it into `mods`, so this folder sits at `<Enshrouded>/mods/free-blocks/`, with `mod.json` directly inside it.
 3. Start the game.
 
 To uninstall, delete the `free-blocks` folder. Uninstalling is safe, it will simply restore the previous recipe costs.
