@@ -1,8 +1,8 @@
 # Free Blocks
 
-Unlocked building blocks are free to craft. 
+Unlocked building blocks and road materials are free to craft. 
 
-Craft as many wood, stone, or any other building blocks as your base needs without gathering the materials. You still have to unlock each block recipe the normal way. 
+Craft as many wood, stone, roof, or any other building blocks, and as much road, as your base needs without gathering the materials. You still have to unlock each recipe the normal way. 
 
 Weapons, armor, food, furniture, and upgrades still cost what they always did.
 
@@ -26,7 +26,7 @@ To uninstall, delete the `free-blocks` folder. Uninstalling is safe, it will sim
 Set `enable_console` to `true` in `eml.json` in the game folder. On launch the console prints one line per recipe it changed, then a summary:
 
 ```
-[free-blocks] 69 block items found, 69 recipes made free
+[free-blocks] 74 blocks and 7 roads found, 81 recipes made free
 ```
 
 If it reports that nothing was changed, a game update has changed the recipe data and the mod needs updating.
